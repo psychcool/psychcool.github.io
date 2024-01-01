@@ -4,10 +4,224 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bored Button</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111111;
+      color: #C9D1D9;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      padding: 50px;
+      text-align: center; /* Center the text within the container */
+    }
+
+    h1 {
+      font-size: 50px;
+    }
+
+    h4 {
+      font-size: 20px;
+      cursor: pointer;
+      text-align: center; /* Center the text within the h4 element */
+      margin: 0 auto 20px; /* Center the h4 element and add bottom margin */
+    }
+
+    .arrow::before {
+      content: '>';
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .arrow.down::before {
+      content: 'v';
+    }
+
+    .content-container {
+      display: none;
+      text-align: left;
+      margin: 0 auto;
+      padding: 10px; /* Adjust padding as needed */
+      width: 500px; /* Set width as needed */
+      top: -5px; /* Adjust top position as needed */
+      font-size: 16px;
+    }
+  </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: black; color: white; text-align: center; font-family: Arial, sans-serif;">
-  <div style="padding: 50px;">
-    <h1 style="font-size: 2em;">Bored Button</h1>
+<body>
+  <div class="container">
+    <h1>Are You <i>Fucking</i> Bored? </h1>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Work on a Website </h4>
+    <div class="content-container" id="contentContainer">
+        Build a website or work on a website. Write some HTML, CSS, and JavaScript Code. 
+        Create something cool and interesting that you like. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Write a Blog Post </h4>
+    <div class="content-container" id="contentContainer">
+        Have ideas, thoughts, and experiences you want to share? 
+        Well write it all out in a blog post. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Write a Video Script </h4>
+    <div class="content-container" id="contentContainer">
+        Want to share something to the next level? Well write a video script. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Workout </h4>
+    <div class="content-container" id="contentContainer">
+        Go lift some weights and run. Challenge your body and your mind.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Write/Read Some Code (Python, JavaScript, etc) </h4>
+    <div class="content-container" id="contentContainer">
+        See a cool program, game, or tool you like? Well Rread some god-damn interesting code. Understand
+        how it works. Write code on tools you want to build that are similar to it. Understand how that code works.
+        Fork your favorite programs from Github. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Practice Math/Physics/Engineering </h4>
+    <div class="content-container" id="contentContainer">
+        Practice some Calculus, Linear Algebra. Practice some Physics. Do some Computer Engineering Problems. 
+        Build some cool fucking circuits.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Record a Video </h4>
+    <div class="content-container" id="contentContainer">
+        Record a video on anything you want. One experience.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Learn a Language </h4>
+    <div class="content-container" id="contentContainer">
+        Start learning a language. Learn German. Learn Japanese. Start Reading and Writting 
+        in each of them.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Listen to good music </h4>
+    <div class="content-container" id="contentContainer">
+        Listen to some god damn good music. Explore even better music here.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Clean the House </h4>
+    <div class="content-container" id="contentContainer">
+        Clean your room. Things are always misplaced. Make your bed. Do your wash. Fold
+        your clothes. Do the dishes. Clean the island.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Clean Your Computer </h4>
+    <div class="content-container" id="contentContainer">
+        Delete useless files. Clean the keyboard. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Hygiene </h4>
+    <div class="content-container" id="contentContainer">
+        Clip your nails. Wash your face. Take a shower. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Read a Book </h4>
+    <div class="content-container" id="contentContainer">
+        Read a good book. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Drink some water </h4>
+    <div class="content-container" id="contentContainer">
+        Drink some water. Get a water bottle and just start drinking it all the time. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Start a New Project </h4>
+    <div class="content-container" id="contentContainer">
+        What do you want to contribute to the world? What do you want to create?
+        Odds are that it can be done. Start outlining how you will do it and how 
+        you will create it.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Cook Some Food </h4>
+    <div class="content-container" id="contentContainer">
+        Cook some good food. Organic food. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Take Some Photos </h4>
+    <div class="content-container" id="contentContainer">
+        Of cool things. One experience to document life.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Draw Some Art </h4>
+    <div class="content-container" id="contentContainer">
+        Draw some cool art.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Garden </h4>
+    <div class="content-container" id="contentContainer">
+        Plant some vegetables. Take care of them. Harvest fruit. Harvest trees. 
+        Harvest mushrooms. Look for Mushrooms. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Play with AI tools </h4>
+    <div class="content-container" id="contentContainer">
+        Or cool software tools in general. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Watch a Documentary </h4>
+    <div class="content-container" id="contentContainer">
+        Watch a cool docuementary about anything. There are tons of YouTube. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Watch Online Videos </h4>
+    <div class="content-container" id="contentContainer">
+        Watch some good content creators. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Watch a Movie </h4>
+    <div class="content-container" id="contentContainer">
+        Watch a good movie.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Watch an Anime </h4>
+    <div class="content-container" id="contentContainer">
+        Watch a great anime series. Then download all the music off youtube using yt-dlp and
+        move the files to your phone so you can listen to it whenever you want.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Browse an RSS Reader </h4>
+    <div class="content-container" id="contentContainer">
+        Stop using social media feeds. That shit is cancer. Get an RSS Reader (Reeder 5) or
+        Fluent Reader and read some good feeds. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Browse Websites </h4>
+    <div class="content-container" id="contentContainer">
+        Browse some cool websites through neocities, or geocities
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Read Some Blogs </h4>
+    <div class="content-container" id="contentContainer">
+        Read blogs in Japanese. Chinese.  
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Play a Video Game </h4>
+    <div class="content-container" id="contentContainer">
+        Play a good fucking video game. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Play Virtual Reality </h4>
+    <div class="content-container" id="contentContainer">
+        Play a good virtual reality game. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Browse Imageboards </h4>
+    <div class="content-container" id="contentContainer">
+        Browse some imageboards. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Browse Forums </h4>
+    <div class="content-container" id="contentContainer">
+        Browse some forums. Write posts. Interact with users and content.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Listen to a Podcast </h4>
+    <div class="content-container" id="contentContainer">
+        Listen to a good podcast.
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Call a Friend </h4>
+    <div class="content-container" id="contentContainer">
+        Call a friend. Date. Ask people out. Get rejected and reject people.
+        Have fun. Take risks. Your young and your playing a game. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Go on IRC  </h4>
+    <div class="content-container" id="contentContainer">
+        Don't have friends and can't call people? Messaging apps with strangers
+        online freak you out? Go on an IRC. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Go Outside </h4>
+    <div class="content-container" id="contentContainer">
+        Touch Grass. Walk in the forest. 
+    </div>
+    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Meditate </h4>
+    <div class="content-container" id="contentContainer">
+        Forget you're alive and that any of this shit actually matters.
+    </div>
   </div>
+
+  <script>
+    function toggleArrow(element) {
+      const arrow = element.querySelector('.arrow');
+      const contentContainer = element.nextElementSibling; // Assuming the container is the next sibling
+      arrow.classList.toggle('down');
+      contentContainer.style.display = (contentContainer.style.display === 'none' || contentContainer.style.display === '') ? 'block' : 'none';
+    }
+  </script>
+  
 </body>
 </html>
