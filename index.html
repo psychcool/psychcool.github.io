@@ -16,23 +16,21 @@
 
     .container {
       padding: 50px;
-      text-align: center; /* Center the text within the container */
+      text-align: center; 
     }
 
     h1 {
       font-size: 50px;
     }
 
-    h2 {
-      color: #FF6666;
+    label.dropdown-label {
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center; 
+        margin: 0 auto 20px;
+        display: block; 
     }
 
-    h4 {
-      font-size: 20px;
-      cursor: pointer;
-      text-align: center; /* Center the text within the h4 element */
-      margin: 0 auto 20px; /* Center the h4 element and add bottom margin */
-    }
 
     .arrow::before {
       content: '>';
@@ -48,38 +46,77 @@
       display: none;
       text-align: left;
       margin: 0 auto;
-      padding: 10px; /* Adjust padding as needed */
-      width: 500px; /* Set width as needed */
-      top: -5px; /* Adjust top position as needed */
+      padding: 10px; 
+      width: 500px; 
+      top: -5px; 
       font-size: 16px;
     }
 
-        /* Media query for mobile devices in portrait mode */
     @media only screen and (max-width: 600px) {
     .container {
-        padding: 20px; /* Adjust padding for smaller screens */
+        padding: 20px; 
     }
 
     .content-container {
-        width: 90%; /* Adjust the width for smaller screens */
+        width: 90%; 
         margin-left: auto;
         margin-right: auto;
     }
     }
+
+    .dropdown-checkbox {
+      display: none; 
+    }
+
+    .arrow::before {
+      content: '>';
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .dropdown-checkbox:checked + label .arrow::before {
+        content: 'v'; 
+    }
+
+
+    .content-container {
+      display: none;
+    }
+
+    
+    .dropdown-checkbox:checked + label + .content-container {
+    display: block; 
+    }
+
 
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Are You <i>Fucking</i> Bored? </h1>
-    <noscript><h2>So you disabled JavaScript? Well that's pretty fucking boring.  </h2></noscript>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Work on a Website </h4>
-    <div class="content-container" id="contentContainer">
+
+
+    <input type="checkbox" id="dropdown1" class="dropdown-checkbox">
+    <label for="dropdown1" class="dropdown-label">
+        <h4>
+          <span class="arrow"></span> Work on a Website
+        </h4>
+    </label>
+    <div class="content-container">
         Build a website or work on a website. Write some actual HTML, CSS, and JavaScript code. 
         Create something cool and interesting that you love. Make the web a better place
         without all the bloat, cookies, ads, trackers, social media, and AI generated garbage. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Write a Blog Post </h4>
+
+
+    <input type="checkbox" id="dropdown2" class="dropdown-checkbox">
+    <label for="dropdown2" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Write a Blog Post
+      </h4>
+    </label>
+
+
     <div class="content-container" id="contentContainer">
         Have ideas, thoughts, and experiences that are stuck in your head? Well don't let them
         stay there forever. You only live once, so express your thoughts, your beliefs, your values, 
@@ -89,19 +126,42 @@
         target="_blank" rel="noopener noreferrer"> Write.as </a>, or <a href="https://zonelets.net/" 
         target="_blank" rel="noopener noreferrer"> Zonelets </a>.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Write a Video Script </h4>
+
+
+    <input type="checkbox" id="dropdown3" class="dropdown-checkbox">
+    <label for="dropdown3" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Write a Video Script
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Want to express yourself even further than a blog post? Well write it out in 
         a video script instead. Get some good music. Record it all, edit it all, and 
         export it all. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Workout </h4>
+
+    <input type="checkbox" id="dropdown4" class="dropdown-checkbox">
+    <label for="dropdown4" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Workout
+      </h4>
+    </label>
+
+
     <div class="content-container" id="contentContainer">
         Go lift some weights and run. Challenge your body and your mind. Humble yourself and
         realize that you're not as strong as you think you are. Grow those muscles, grow that 
         endurance, and be happy that you're alive.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Write/Read Some Code (Python, JavaScript, etc) </h4>
+
+    <input type="checkbox" id="dropdown5" class="dropdown-checkbox">
+    <label for="dropdown5" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Write/Read Some Code (Python, JavaScript, etc)
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         See a cool program, game, or tool you like? Is it open source? Fork it all on <a href="https://github.com/" 
         target="_blank" rel="noopener noreferrer"> Github </a>/<a href="https://about.gitlab.com/" 
@@ -112,7 +172,14 @@
         you want. Contribute to current programs, apps, games, tools that are in development. If you can imagine it, then 
         it's possible.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Practice Math/Physics/Engineering </h4>
+
+    <input type="checkbox" id="dropdown6" class="dropdown-checkbox">
+    <label for="dropdown6" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Practice Math/Physics/Engineering
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Practice some Calculus, Linear Algebra, Discrete, Statistics, Probability, etc. 
         Practice some Physics, Chemistry, and Engineering. Understand things that 99% of people do not understand. 
@@ -120,13 +187,28 @@
         Work on some cool Computer Engineering problems. Build some cool fucking circuits. Read papers, algorithms, 
         proofs, theories, and code that are changing the way our technology works.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Record a Video </h4>
+
+
+    <input type="checkbox" id="dropdown7" class="dropdown-checkbox">
+    <label for="dropdown7" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Record a Video
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         No not some TikTok Chinese garbage spyware. Record an actual video. Document a 
         once in a lifetime experience. Record nature. Record things you find interesting. 
         Talk about it, live it, and experience it all while you can. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Learn a Language </h4>
+
+    <input type="checkbox" id="dropdown8" class="dropdown-checkbox">
+    <label for="dropdown8" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Learn a Language 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Start learning a language. Learn German, Japanese, Spanish, Greek - whatever the hell you want. 
         Understand how a good portion of the population actually speaks, relates, and expresses themselves. 
@@ -136,7 +218,14 @@
         to read, write, and express yourself within the language. Travel to different countries and 
         interact with different types of people all over the world.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Listen to good music </h4>
+
+    <input type="checkbox" id="dropdown9" class="dropdown-checkbox">
+    <label for="dropdown9" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Listen to good music
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Listen to some good god-damn music. Find some good music from movies, anime, shows, 
         video games, and documentaries. Use <a href="https://github.com/yt-dlp/yt-dlp" 
@@ -144,13 +233,27 @@
         have them forever. Listen to them when you're writing, working,
         or just want to express yourself in ways inaccessible to the regular mind. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Clean the House </h4>
+
+    <input type="checkbox" id="dropdown10" class="dropdown-checkbox">
+    <label for="dropdown10" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Clean the House 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Clean your room unironically. Make your bed. Clean the floor. Do your wash. Organize
         your clothes. Do the dishes. Clean the tables. Clean the windows. Reorganize your rooms. 
         Take out the trash. Clean the toilet. Clean the sink. Wash the towels. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Clean Your Computer </h4>
+
+    <input type="checkbox" id="dropdown11" class="dropdown-checkbox">
+    <label for="dropdown11" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Clean Your Computer 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Delete useless files. Delete useless accounts. Delete useless data. 
         Clean the keyboard. Clean the monitor. Clean the servers.
@@ -158,22 +261,43 @@
         Buy new cases. Backup your Data. Restart your devices. Upgrade your devices. Fix
         your devices. Install new apps, programs, tools, whatever the hell you want.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Hygiene </h4>
+
+    <input type="checkbox" id="dropdown12" class="dropdown-checkbox">
+    <label for="dropdown12" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Hygiene
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Get some good skin products. Wash your face. Take a shower. 
-        Clip your nails. Shave your neck beard. Brush your teeth. 
+        Clip your nails. Shave your beard. Brush your teeth. 
         Floss your teeth. Put some contacts or glasses on.
         Wear stylish clothes that fit. Style your hair the way you want it. 
         Become the sexiest version of you that you can be.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Read a Book </h4>
+
+    <input type="checkbox" id="dropdown13" class="dropdown-checkbox">
+    <label for="dropdown13" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Read a Book 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Read some good ass books. Fiction, Non-fiction, Sci-fi, Fantasy, Romance, 
         Realistic Fiction, Drama, Graphic Novels, Zines, Comics, whatever the hell you want.
         Learn to think in ways that you never thought possible. Understand things that you
         never knew existed.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Drink some water </h4>
+
+    <input type="checkbox" id="dropdown14" class="dropdown-checkbox">
+    <label for="dropdown14" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Drink some water 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Stop buying plastic water. They are the biggest scam on earth. 
         Get a filtered non-plastic water bottle, find a water fountain, fill it up and 
@@ -181,14 +305,28 @@
         meal. Drink it heavily before and after exercising. Drink it heavily before
         and after studying.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Start a New Project </h4>
+
+    <input type="checkbox" id="dropdown15" class="dropdown-checkbox">
+    <label for="dropdown15" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Start a New Project
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         What do you want to contribute to the world? What do you want to create?
         What do you want to produce? Odds are that it can be done, you just have
         to spend some time everyday on it. Start outlining how you will do it and how 
         you will create it. Make a contribution to life. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Cook Some Food </h4>
+
+    <input type="checkbox" id="dropdown16" class="dropdown-checkbox">
+    <label for="dropdown16" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Cook Some Food 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Stop eating unhealthy American fast food garbage. Eat actual food.
         You know, things your body was actually able to process and digest. 
@@ -197,20 +335,41 @@
         Remember the food plate: Grains, Protein, Veggies, Fruit, 
         Dairy, and Healthy Fats. Eat medicinal plants and mushrooms. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Take Some Photos </h4>
+
+    <input type="checkbox" id="dropdown17" class="dropdown-checkbox">
+    <label for="dropdown17" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Take Some Photos
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         No, not for garbage social media. Cool things you actually want to remember. 
         We only get one experience to document life, so make sure it's things you love. 
         Put it on your website, create a gallery, create a video, and/or share it with
         your friends or family.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Draw Some Art </h4>
+
+    <input type="checkbox" id="dropdown18" class="dropdown-checkbox">
+    <label for="dropdown18" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Draw Some Art
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Draw or create some cool art. Make it whatever the hell you want. Use whatever 
         tools that are at your disposal whether that be digital or physical. Create 
         things that allow you to express yourself in ways you could never imagine.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Garden </h4>
+
+    <input type="checkbox" id="dropdown19" class="dropdown-checkbox">
+    <label for="dropdown19" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Garden
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Plant some Vegetables. Plant some Fruit Bushes. Plant some Fruit Trees.
         Plant some Nut Trees. Grow some Mushrooms. Take care of them. 
@@ -218,13 +377,27 @@
         Forage for Plants. Explore this amazing world and utilize all the 
         tools it offers you.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Play with AI tools </h4>
+
+    <input type="checkbox" id="dropdown20" class="dropdown-checkbox">
+    <label for="dropdown20" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Play with AI tools 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Or any cool software tools in general. See what you can do with them. Build 
         cool creations with them. Utilize them to help you with projects your working
         on. Just have fun with them. Find the limits of what you can do with them.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Watch a Documentary </h4>
+
+    <input type="checkbox" id="dropdown21" class="dropdown-checkbox">
+    <label for="dropdown21" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Watch a Documentary 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
          Stop watching multi-billion dollar Hollywood Disney corporate garbage superhero 
          feel good movies. Watch cool Documentaries instead. Things that are actually real 
@@ -232,26 +405,54 @@
          you actually feel things. There is authenticity to a well researched documentary 
          that is like nothing else on earth. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Watch Online Videos </h4>
+
+    <input type="checkbox" id="dropdown22" class="dropdown-checkbox">
+    <label for="dropdown22" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Watch Online Videos
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Watch some independent individual content creators. Not some garbage e-celebrity starting
         drama, but people that spend hours of their time working, writing, and recording scripts 
         to share something amazing with the world.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Watch a Movie </h4>
+
+    <input type="checkbox" id="dropdown23" class="dropdown-checkbox">
+    <label for="dropdown23" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Watch a Movie 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Watch an actual good movie. Movies that actually have soul. 
         Where actual heart, soul, blood, and tears are  put in it. 
         Where actors actually act. Where you get lost in the story, the characters, and the music. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Watch an Anime </h4>
+
+    <input type="checkbox" id="dropdown24" class="dropdown-checkbox">
+    <label for="dropdown24" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Watch an Anime
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Watch a great Anime series. Then after you're done download all the music off YouTube using 
         <a href="https://github.com/yt-dlp/yt-dlp" 
         target="_blank" rel="noopener noreferrer">yt-dlp</a>, so 
         you can listen to it whenever you want. Always have a good Anime ready to watch whenever you want to. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Listen to a Podcast </h4>
+
+    <input type="checkbox" id="dropdown25" class="dropdown-checkbox">
+    <label for="dropdown25" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Listen to a Podcast 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Listen to a good podcast. Not some corporate garbage e-celebrity comedian podcast.
         Not some propaganda, ideology, political podcast - I mean a podcast where the people 
@@ -259,7 +460,14 @@
         critical thinking is put first. Where interesting stories are told. Where discussions 
         are had.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Browse an RSS Reader </h4>
+
+    <input type="checkbox" id="dropdown26" class="dropdown-checkbox">
+    <label for="dropdown26" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Browse an RSS Reader
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Stop using social media feeds. That shit is cancer. Stop allowing corporations to force
         spoon-feed you corporate propaganda ideologies. Get an actual RSS Reader, start adding feeds,
@@ -268,7 +476,14 @@
         target="_blank" rel="noopener noreferrer">Fluent Reader</a> or <a href="https://reederapp.com/" 
         target="_blank" rel="noopener noreferrer">Reeder 5</a>.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Browse Websites </h4>
+
+    <input type="checkbox" id="dropdown27" class="dropdown-checkbox">
+    <label for="dropdown27" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Browse Websites
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Browse some cool motherfucking websites. Use Neocities, website collectives, 
         webrings, buttons, search tools - whatever to find them. Learn new things, 
@@ -276,14 +491,28 @@
         For easier navigation use the <a href="https://psychcool.neocities.org/Personal%20Web%20Map.pdf" 
         target="_blank" rel="noopener noreferrer">Personal Web Map</a>.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Read Some Blogs </h4>
+
+    <input type="checkbox" id="dropdown28" class="dropdown-checkbox">
+    <label for="dropdown28" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Read Some Blogs
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Stop reading AI generated corporate garbage ideological propaganda articles. 
         Read some individual independent blog posts instead. Read actual soul. See what people 
         actually think about the world. View their thoughts, values, ideas, and desires. Learn 
         from what they tell you and update your knowledge of the world.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Play a Video Game </h4>
+
+    <input type="checkbox" id="dropdown29" class="dropdown-checkbox">
+    <label for="dropdown29" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Play a Video Game 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Don't play games that are corporate manipulative garbage. 
         Play an actual amazing video game. There are video games out there that can give you an 
@@ -291,13 +520,29 @@
         can while you're alive. Play them with friends. Have as much fun as you can while you're 
         living. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Play Virtual Reality </h4>
+
+    <input type="checkbox" id="dropdown30" class="dropdown-checkbox">
+    <label for="dropdown30" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Play Virtual Reality
+      </h4>
+    </label>
+
+
     <div class="content-container" id="contentContainer">
         Play a good virtual reality game. Good virtual reality games are rare, but when you do 
         fine one it makes everything worth it. Get lost in it. The ability to escape reality or better yet 
         create a better reality is what dreams are made of. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Browse Imageboards </h4>
+
+    <input type="checkbox" id="dropdown31" class="dropdown-checkbox">
+    <label for="dropdown31" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Browse Imageboards
+      </h4>
+    </label>
+
+
     <div class="content-container" id="contentContainer">
         No not 4chan garbage. Browse some actual good Imageboards with an actual good healthy community. 
         An active community where people actually create good posts and want to understand things. 
@@ -306,7 +551,14 @@
         target="_blank" rel="noopener noreferrer">Map</a> to
         find Imageboards.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Browse Forums </h4>
+
+    <input type="checkbox" id="dropdown32" class="dropdown-checkbox">
+    <label for="dropdown32" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Browse Forums 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         No not Reddit garbage. Browse some actual good Forums with an actual good healthy community. 
         An active community where people actually create good posts and want to understand things. 
@@ -315,7 +567,14 @@
         target="_blank" rel="noopener noreferrer">Map</a> to
         find Forums.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Engage with Messaging Apps  </h4>
+
+    <input type="checkbox" id="dropdown33" class="dropdown-checkbox">
+    <label for="dropdown33" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Engage with Messaging Apps 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         No not Spyware Discord. Use apps that are actually secure. Go on an IRC. Go on an XMPP. 
         Go on Matrix. Go on Element. Go on Mumble. Go on Signal. Go on Revolt Chat and start making it a better
@@ -323,13 +582,27 @@
         target="_blank" rel="noopener noreferrer">Map</a> to
         find Messaging Apps.
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Call a Friend </h4>
+
+    <input type="checkbox" id="dropdown34" class="dropdown-checkbox">
+    <label for="dropdown34" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Call a Friend 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Call a friend. Have an actual real conversation. Be vulnerable. Risk offending people.
         Risk polarizing people. Risk making people uncomfortable. Expose your truth. Find a friend group. Date. 
         Ask people out. Get rejected and reject people. Have fun. Take risks. We're all just playing a game anyway. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Go Outside </h4>
+
+    <input type="checkbox" id="dropdown35" class="dropdown-checkbox">
+    <label for="dropdown35" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Go Outside 
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
         Go Outside and Touch Grass. Walk in the forest. Hike a mountain. 
         Breathe in the healthy oxygen. Go camping. Look for mushrooms and plants. Look for fossils and rocks. 
@@ -338,9 +611,16 @@
         Join clubs. Go to museums, galleries and historical sites. 
         Forget all technology. Enjoy yourself. Enjoy living through being. 
     </div>
-    <h4 onclick="toggleArrow(this)"> <span class="arrow"></span> Meditate </h4>
+
+    <input type="checkbox" id="dropdown36" class="dropdown-checkbox">
+    <label for="dropdown36" class="dropdown-label">
+      <h4>
+        <span class="arrow"></span> Meditate
+      </h4>
+    </label>
+
     <div class="content-container" id="contentContainer">
-        Forget you're alive and that any of this shit actually matters. Nothing is real, and everything 
+        Forget you're alive and that any of this actually matters. Nothing is real, and everything 
         is an illusion. Play the game, but realize it's just a game. It's just a ride. Everything is facade 
         created by your perception systems. Your ego and identities are all but illusions. Your grave will 
         eventually be forgotten, and your bones will return to the earth. Nothing of you will exist 
@@ -351,14 +631,7 @@
     </div>
   </div>
 
-  <script>
-    function toggleArrow(element) {
-      const arrow = element.querySelector('.arrow');
-      const contentContainer = element.nextElementSibling; // Assuming the container is the next sibling
-      arrow.classList.toggle('down');
-      contentContainer.style.display = (contentContainer.style.display === 'none' || contentContainer.style.display === '') ? 'block' : 'none';
-    }
-  </script>
+
   
 </body>
 </html>
